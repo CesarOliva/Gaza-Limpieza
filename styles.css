@@ -1,0 +1,25 @@
+*{
+    font-family: 'Poppins';
+}
+
+li.active a{
+    border-bottom: 2px solid red
+}
+
+section.main{
+    background-image: url("Imagenes/Header.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 128px);
+}
+
+section.hero{
+    background: rgba(37, 37, 37, 87%);
+}
+
+section.paralax{
+    background-image: url("Imagenes/paralax-cropped.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
