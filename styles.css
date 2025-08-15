@@ -7,7 +7,7 @@ li.active a{
 }
 
 section.main{
-    background-image: url("Imagenes/Header.png");
+    background-image: url("Imagenes/header.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     height: calc(100vh - 128px);
@@ -18,7 +18,7 @@ section.hero{
 }
 
 section.paralax{
-    background-image: url("Imagenes/paralax-cropped.png");
+    background-image: url("Imagenes/paralax-trapeadores.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
