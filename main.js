@@ -1,39 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const carousel = document.querySelector(".carousel");
-  const inner = document.querySelector(".carousel-inner");
-  const items = document.querySelectorAll(".carousel-item");
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
-  const indicators = document.querySelectorAll(".indicator");
+  // Seleccionar TODOS los carruseles
+  const carousels = document.querySelectorAll(".carousel");
 
-  let currentIndex = 0;
-  const totalItems = items.length;
+  // Inicializar cada carrusel
+  carousels.forEach((carousel) => {
+    const inner = carousel.querySelector(".carousel-inner");
+    const items = carousel.querySelectorAll(".carousel-item");
+    const prevBtn = carousel.querySelector(".prev");
+    const nextBtn = carousel.querySelector(".next");
+    const indicators = carousel.querySelectorAll(".indicator");
 
-  function updateCarousel() {
-    inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+    let currentIndex = 0;
+    const totalItems = items.length;
 
-    indicators.forEach((indicator, index) => {
-      indicator.classList.toggle("active", index === currentIndex);
-    });
-  }
+    // Función de actualización (privada para este carrusel)
+    function updateCarousel() {
+      inner.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalItems;
-    updateCarousel();
-  }
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle("active", index === currentIndex);
+      });
+    }
 
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-    updateCarousel();
-  }
-
-  nextBtn.addEventListener("click", nextSlide);
-  prevBtn.addEventListener("click", prevSlide);
-
-  indicators.forEach((indicator) => {
-    indicator.addEventListener("click", function () {
-      currentIndex = parseInt(this.getAttribute("data-slide-to"));
+    // Eventos específicos para este carrusel
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % totalItems;
       updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      updateCarousel();
+    });
+
+    indicators.forEach((indicator) => {
+      indicator.addEventListener("click", function () {
+        currentIndex = parseInt(this.getAttribute("data-slide-to"));
+        updateCarousel();
+      });
     });
   });
 });

@@ -30,42 +30,41 @@ section.paralax {
   right: 20px;
 }
 
-/* CONTENEDOR PRINCIPAL */
+
+
+
+/* ESTILOS COMPARTIDOS */
 .carousel {
   position: relative;
   width: 100%;
   max-width: 800px;
-  height: 400px; /* Alto fijo */
-  margin: 20px auto;
+  height: 400px;
+  margin: 40px auto;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: white;
 }
 
-/* CONTENEDOR DE SLIDES */
 .carousel-inner {
   display: flex;
-  height: 100%; /* Hereda el alto del carrusel */
+  height: 100%;
   transition: transform 0.5s ease;
 }
 
-/* ITEMS (SLIDES) */
 .carousel-item {
   min-width: 100%;
   height: 100%;
   position: relative;
 }
 
-/* IMÁGENES - AJUSTE PERFECTO */
 .carousel-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Escala manteniendo relación de aspecto */
+  object-fit: contain;
   display: block;
 }
 
-/* CONTROLES */
 .carousel-control {
   position: absolute;
   top: 50%;
@@ -92,7 +91,6 @@ section.paralax {
   right: 15px;
 }
 
-/* INDICADORES */
 .carousel-indicators {
   position: absolute;
   bottom: 15px;
@@ -107,26 +105,11 @@ section.paralax {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #b4b4b4;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .indicator.active {
   background-color: #252D75;
-}
-
-/* CAPTION (OPCIONAL) */
-.carousel-caption {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  text-align: center;
-  max-width: 80%;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-family: Arial, sans-serif;
 }
