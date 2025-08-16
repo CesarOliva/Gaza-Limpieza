@@ -1,31 +1,132 @@
-*{
-    font-family: 'Poppins';
+* {
+  font-family: "Poppins";
 }
 
-li.active a{
-    border-bottom: 2px solid red
+li.active a {
+  border-bottom: 2px solid red;
 }
 
-section.main{
-    background-image: url("Imagenes/dark-header.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: calc(100vh - 128px);
+section.main {
+  background-image: url("Imagenes/dark-header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 128px);
 }
 
-section.hero{
-    background: rgba(37, 37, 37, 87%);
+section.hero {
+  background: rgba(37, 37, 37, 87%);
 }
 
-section.paralax{
-    background-image: url("Imagenes/paralax-trapeadores.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+section.paralax {
+  background-image: url("Imagenes/paralax-trapeadores.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.wpp{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+.wpp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 400px; /* Alto fijo */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+/* CONTENEDOR DE SLIDES */
+.carousel-inner {
+  display: flex;
+  height: 100%; /* Hereda el alto del carrusel */
+  transition: transform 0.5s ease;
+}
+
+/* ITEMS (SLIDES) */
+.carousel-item {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* IMÁGENES - AJUSTE PERFECTO */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Escala manteniendo relación de aspecto */
+  display: block;
+}
+
+/* CONTROLES */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  z-index: 10;
+}
+
+.carousel-control.prev {
+  left: 15px;
+}
+
+.carousel-control.next {
+  right: 15px;
+}
+
+/* INDICADORES */
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: #252D75;
+}
+
+/* CAPTION (OPCIONAL) */
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-align: center;
+  max-width: 80%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
 }
