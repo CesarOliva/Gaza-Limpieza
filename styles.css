@@ -32,8 +32,7 @@ section.paralax {
 
 
 
-
-/* ESTILOS COMPARTIDOS */
+/* Carrusel */
 .carousel {
   position: relative;
   width: 100%;
@@ -112,4 +111,33 @@ section.paralax {
 
 .indicator.active {
   background-color: #252D75;
+}
+
+
+
+/*Galería*/
+.galeria {
+    overflow: hidden;
+}
+
+.galeria .foto {
+  background: black;
+  width: 33.3%;
+  float: left;
+}
+
+.galeria .foto img {
+    width: 100%;
+    vertical-align: top;
+  }
+  
+  .galeria .foto:hover img{
+    transition: all .3s ease;
+    opacity: .7;
+}
+
+@media screen and (max-width: 800px) {
+  .galeria .foto {
+        width: 50%;
+    }
 }
